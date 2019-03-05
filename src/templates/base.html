@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include 'css.html' %}
+    <title>GuitHub</title>
+  </head>
+  <body>
+    <div>
+        <div>
+            {% include 'navbar.html' %}
+        </div>
+        
+
+        {% block content %}
+            
+        {% endblock content %}
+
+    </div>
+
+
+    {% include 'js.html' %}
+  </body>
+</html>
