@@ -1,1 +1,1 @@
-web: gunicorn GuitHub.wsgi
+web: gunicorn reactify.wsgi
