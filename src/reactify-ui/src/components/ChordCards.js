@@ -11,7 +11,7 @@ class ChordCards extends Component {
     
     return (
        
-        <div>
+        <div className="chord-card">
           <div>
             <ins className="scales_chords_api" chord={`${this.props.chord}`} output="sound" instrument="guitar" />
           </div>

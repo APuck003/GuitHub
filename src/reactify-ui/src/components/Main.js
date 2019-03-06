@@ -8,29 +8,6 @@ import ScaleDropDownList from './ScaleDropDownList'
 import ScaleCards from './ScaleCards'
 // import SideGuitar from "/static/media/sidebarGuitar.334dd5b3.jpg"
 
-const sidenav = {
-  height: '100%',
-  width: '160px',
-  position: 'fixed',
-  zIndex: '1',
-  top: '56px',
-  left: '0',
-};
-
-const sideNavA = {
-  padding: '6px 8px 6px 16px',
-  textDecoration: 'none',
-  fontSize: '25px',
-  color: '#818181',
-  display: 'block'
-};
-
-const chordCards = {
-  display: 'flex',
-  justifyContent: 'flex-end'
-};
-
-
 class Main extends Component {
   constructor() {
     super();
@@ -38,7 +15,7 @@ class Main extends Component {
       key: "C",
       chords: [],
       keyQuality: "major",
-      modalScales: "ionian"
+      modalScales: "major"
     }
   }
   
@@ -63,40 +40,37 @@ class Main extends Component {
 
   render() {
     let scale = this.state.key + " " + this.state.keyQuality;
-    
     let getModeNames = Scale.modeNames(scale);
-    
     let selectedMode = getModeNames.filter(t => t[1] === this.state.modalScales);
-    
-    
+    console.log(getModeNames);
     return (
         <div>
-              {/*style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}*/}
-              {/*className="d-flex flex-column"*/}
-          
-          <div style={sidenav}>
-            <div style={sideNavA}>
-              <DropdownList getKeys={this.getKeys} />
-              <br/>
-              <DropdownChords getChords={this.getChords} />
-              <br/>
-              <ScaleDropDownList getScale={this.getScale}/>
-              <br/>
-            </div>
-          </div>
           
           
+          <nav className="side-nav">
+            <ul>
+              <li>
+                <DropdownList getKeys={this.getKeys} />
+              </li>
+              <li>
+                <DropdownChords getChords={this.getChords} />
+              </li>
+              <li>
+                <ScaleDropDownList getScale={this.getScale}/>
+              </li>
+            </ul>
+          </nav>
           
-          <div style={chordCards}>
+          <section className="chord-cards">
               {this.state.chords.map(chord => {
                   return <ChordCards chord={chord} key={chord.id} />
               })}
-          </div>
+          </section>
           
-          <div className="scale-cards">
+          <section className="scale-cards">
             <ScaleCards selectedMode={selectedMode[0]} />
-          </div>
-          
+            <img className="mode-image" src={`/static/img/guitar-${this.state.modalScales}-${this.state.key.replace('#', '-sharp')}.jpg`} />
+          </section>
 
         </div>
     );

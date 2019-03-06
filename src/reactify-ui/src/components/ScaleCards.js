@@ -4,15 +4,18 @@ import * as Key from "tonal-key";
 class ScaleCards extends Component {
   
   render() {
-    
     let formattedMode = this.props.selectedMode && this.props.selectedMode.join(' ')
-    
+    console.log(formattedMode)
     
     return (
+        
         <div>
           {Key.scale(formattedMode).map(note => {
             return (
-                <h3 style={{decorations: 'none'}}>{note}</h3>
+                <div>
+                  {/*<h3 style={{decorations: 'none'}}>{note}</h3>*/}
+                </div>
+                
             )
           })}
         </div>

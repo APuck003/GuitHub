@@ -1,3 +1,54 @@
-.navbar {
-    background-image: url('sidebarGuitar.jpg');
+.guithub-logo {
+    width: 139px;
+}
+
+
+.side-nav{
+    background:#fcfcfc;
+    box-shadow: -3px -10px 15px rgba(0,0,0,.5);
+}
+.side-nav ul{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+.side-nav li > div{
+    padding:10px;
+}
+.side-nav li select{
+    width:100%;
+}
+.chord-cards{
+}
+.chord-cards .chord-card{
+    padding:15px;
+    overflow: hidden;
+}
+.scale-cards{
+    margin:15px;
+    padding:15px;
+    border:solid 1px red
+}
+
+.mode-image {
+    width: 100%;
+}
+
+@media only screen and (min-width: 480px) {
+    .side-nav{
+        width:200px;
+        float:left;
+    }
+    .chord-cards{
+        overflow: scroll;
+        height: 340px;
+        padding: 0 15px 0 0;
+    }
+    .chord-cards .chord-card{
+        float:left;
+        width:50%;
+    }
+    .scale-cards{
+
+    }
 }
