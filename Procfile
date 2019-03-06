@@ -1,1 +1,1 @@
-web: gunicorn reactify.wsgi
+web: gunicorn reactify.wsgi.application
